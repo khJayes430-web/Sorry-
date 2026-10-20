@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#171322"><title>I'm Sorry 💗</title>
+<style>
+:root{--pink:#e85d83;--ink:#38283e;--paper:#fff8fb}
+*{box-sizing:border-box}body{margin:0;min-height:100svh;display:grid;place-items:center;padding:20px;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:radial-gradient(circle at 15% 15%,#503453 0 2px,transparent 3px),radial-gradient(circle at 85% 30%,#68435d 0 3px,transparent 4px),linear-gradient(145deg,#11121f,#2a2035 65%,#171322);background-size:90px 90px,120px 120px,auto;overflow-x:hidden}
+.card{width:min(100%,520px);text-align:center;padding:clamp(25px,6vw,42px) clamp(17px,5vw,34px);border:7px solid #f0d0dc;border-radius:28px;background:repeating-linear-gradient(to bottom,var(--paper) 0 29px,#f5dfe7 30px 33px);box-shadow:0 22px 60px #0005;animation:appear .7s ease-out both}
+.kicker{font-size:.76rem;letter-spacing:.22em;text-transform:uppercase;color:#b34f70;font-weight:800}.heart{font-size:48px;margin:10px 0;display:inline-block;animation:pulse 1.6s infinite}
+h1{font-family:Georgia,serif;font-size:clamp(2.1rem,8vw,3.2rem);line-height:1.1;margin:8px 0 18px;color:#39263e}
+p{font-size:clamp(1rem,3.8vw,1.12rem);line-height:1.8;margin:14px 0}
+.note{background:#fffdfdba;border:1px solid #f0d0dc;border-radius:18px;padding:17px 16px;margin:22px 0;text-align:left}
+.signature{font-family:Georgia,serif;font-style:italic;color:#b34f70;font-size:1.15rem}
+button{border:0;border-radius:999px;padding:14px 22px;font-size:1rem;font-weight:750;cursor:pointer;transition:transform .2s}
+button:active{transform:scale(.97)}.primary{background:var(--pink);color:white;box-shadow:0 5px 0 #b83f63}.secondary{background:#fff;color:#b34f70;border:2px solid #f1b7c8}
+.actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+#reply{display:none;margin-top:20px;padding:15px;border-radius:16px;background:#fffdfd;border:1px dashed #df8da7;color:#70415a;line-height:1.7}
+.footer{font-size:.78rem;color:#89778c;margin-top:24px}.float{position:fixed;pointer-events:none;bottom:-30px;animation:floatUp 5s linear forwards;opacity:.8}
+@keyframes appear{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}@keyframes floatUp{to{transform:translateY(-110vh) rotate(30deg);opacity:0}}
+@media(max-width:380px){.card{border-width:5px;border-radius:22px}.actions button{width:100%}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition:none!important}}
+</style></head><body>
+<main class="card">
+<div class="kicker">a little note from my heart</div><div class="heart" aria-hidden="true">💗</div>
+<h1>I'm Sorry, Tuhina</h1>
+<p>I know you're angry with me, and I don't want to brush your feelings aside.</p>
+<section class="note">
+<p>I’m genuinely sorry if I hurt you. You matter to me, and I want to understand how you feel—not argue, make excuses, or rush you into forgiving me.</p>
+<p>I’ll listen when you’re ready, and I’ll try to make things right through my actions, not just my words.</p>
+<p>You don't have to reply right now. Take the time you need. ❤️‍🩹</p>
+</section>
+<div class="signature">With care, always 💌</div>
+<div class="actions"><button class="primary" id="openBtn">A little message 💗</button><button class="secondary" id="heartBtn">Send a heart ♡</button></div>
+<div id="reply" role="status" aria-live="polite"></div>
+<div class="footer">No pressure. Just an honest apology.</div>
+</main>
+<script>
+const reply=document.getElementById('reply');
+document.getElementById('openBtn').addEventListener('click',()=>{reply.style.display='block';reply.textContent='I care about you, and I’m ready to listen whenever you feel comfortable talking. I’m sorry. 💗';});
+document.getElementById('heartBtn').addEventListener('click',()=>{const h=document.createElement('span');h.className='float';h.textContent=['💗','💕','🩷','❤️‍🩹'][Math.floor(Math.random()*4)];h.style.left=(8+Math.random()*84)+'vw';h.style.fontSize=(18+Math.random()*22)+'px';document.body.appendChild(h);setTimeout(()=>h.remove(),5100);reply.style.display='block';reply.textContent='A little heart for you—no pressure to reply. ♡';});
+</script></body></html>
